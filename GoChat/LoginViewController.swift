@@ -11,14 +11,20 @@ import Firebase
 import FirebaseAuth
 import FirebaseDatabase
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController{
     
     @IBOutlet weak var Name: UITextField!
+    @IBOutlet weak var userImg: UIImageView!
     
+    var isSetPhoto:Bool = false
     let uuid: String =  UIDevice.current.identifierForVendor!.uuidString
+    var storageRef: FIRStorageReference = FIRStorage.storage().reference(forURL: "gs://tripgif-b205b.appspot.com")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        //點logo即可選照片的東東
+        //MainImg.isUserInteractionEnabled = true
+        //self.MainImg.addGestureRecognizer(UITapGestureRecognizer(target:self, action: #selector(handleSelectProfileImageView)))
         print("我裝置的uuid: \(uuid)")
     }
     
@@ -52,10 +58,24 @@ class LoginViewController: UIViewController {
                     let userId:String = (FIRAuth.auth()?.currentUser?.uid)!
                     let userRef = FIRDatabase.database().reference().child("TripGifUsers")
 
-                    //新增User到資料庫
-                    let newUser = userRef.child(self.uuid)
-                    let newUserData = ["NickName":userName, "uid":userId, "uuid":self.uuid]
-                    newUser.setValue(newUserData)
+                    //預設，不設定個人照片如果有設定個人照片
+                    let imageName = self.uuid
+                    let userImgRef = FIRStorage.storage().reference().child("\(imageName).png")
+                    if let uploadData = UIImagePNGRepresentation(self.userImg.image!){
+                        userImgRef.put(uploadData, metadata: nil, completion:
+                            {(metadata, error)in
+                                if error != nil{
+                                    print(error!)
+                                    return
+                                }
+                                //新增User到資料庫
+                                let newUser = userRef.child(self.uuid)
+                                if let userImgUrl = metadata?.downloadURL()?.absoluteString{
+                                    let newUserData = ["NickName":userName, "uid":userId, "uuid":self.uuid, "UserImgUrl":userImgUrl]
+                                    newUser.setValue(newUserData)
+                                }
+                        })
+                    }
                 }
             })
         }else{
@@ -67,6 +87,10 @@ class LoginViewController: UIViewController {
         }
     }
     
+    @IBAction func SetPhotoButton(_ sender: Any) {
+        handleSelectProfileImageView()
+        self.isSetPhoto = true
+    }
     // MARK: - Navigation
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -76,5 +100,32 @@ class LoginViewController: UIViewController {
             let roomVc = navVc.viewControllers.first as! RoomsViewController // 2
             roomVc.senderDisplayName = (Name?.text)! // 3
         }
+    }
+}
+extension LoginViewController:UIImagePickerControllerDelegate,UINavigationControllerDelegate{
+    func handleSelectProfileImageView(){
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        picker.allowsEditing = true
+        
+        present(picker, animated:true, completion:nil)
+    }
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        var selectedImageFromPicker: UIImage?
+        
+        if let editedImage = info["UIImagePickerControllerOriginalImage"]as? UIImage{
+            selectedImageFromPicker = editedImage
+        }else if let originalImage = info["UIImagePickerControllerOriginalImage"] as? UIImage{
+            selectedImageFromPicker = originalImage
+        }
+        if let selectedImage = selectedImageFromPicker{
+            self.userImg.image = selectedImage
+        }
+        dismiss(animated: true, completion: nil)
+    }
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        print("cancel")
+        dismiss(animated: true, completion: nil)
     }
 }

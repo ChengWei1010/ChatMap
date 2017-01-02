@@ -592,7 +592,7 @@
 				CODE_SIGN_ENTITLEMENTS = GoChat/GoChat.entitlements;
 				DEVELOPMENT_TEAM = 2RB2X2CQ6M;
 				INFOPLIST_FILE = GoChat/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Lilycheng.GoChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -608,7 +608,7 @@
 				CODE_SIGN_ENTITLEMENTS = GoChat/GoChat.entitlements;
 				DEVELOPMENT_TEAM = 2RB2X2CQ6M;
 				INFOPLIST_FILE = GoChat/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Lilycheng.GoChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
