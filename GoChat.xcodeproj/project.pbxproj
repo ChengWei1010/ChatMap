@@ -9,20 +9,18 @@
 /* Begin PBXBuildFile section */
 		79235BE61E0801E000629D70 /* RoomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79235BE51E0801E000629D70 /* RoomsViewController.swift */; };
 		79235BE91E08026500629D70 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79235BE81E08026400629D70 /* Room.swift */; };
+		79265BC91E1AC70100DF3287 /* Images in Resources */ = {isa = PBXBuildFile; fileRef = 79265BC81E1AC70100DF3287 /* Images */; };
+		79265BCD1E1B2E5E00DF3287 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79265BCC1E1B2E5E00DF3287 /* LoginViewController.swift */; };
+		79265BCF1E1B49C400DF3287 /* MyInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79265BCE1E1B49C400DF3287 /* MyInfoViewController.swift */; };
 		794396811E18DC1800E7C145 /* RoomMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794396801E18DC1800E7C145 /* RoomMapViewController.swift */; };
 		794396831E18DC2A00E7C145 /* RoomChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794396821E18DC2A00E7C145 /* RoomChatViewController.swift */; };
-		794396851E18E36300E7C145 /* logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 794396841E18E36300E7C145 /* logo.jpg */; };
-		794396871E18F47000E7C145 /* default-user-image.png in Resources */ = {isa = PBXBuildFile; fileRef = 794396861E18F47000E7C145 /* default-user-image.png */; };
 		79A9400C1DF40B5100BA0EDB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A9400B1DF40B5100BA0EDB /* AppDelegate.swift */; };
 		79A940161DF40B5100BA0EDB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79A940141DF40B5100BA0EDB /* LaunchScreen.storyboard */; };
 		79A940211DF40B5100BA0EDB /* GoChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A940201DF40B5100BA0EDB /* GoChatTests.swift */; };
 		79A9402C1DF40B5100BA0EDB /* GoChatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A9402B1DF40B5100BA0EDB /* GoChatUITests.swift */; };
-		79A9403A1DF40B7900BA0EDB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A940391DF40B7900BA0EDB /* LoginViewController.swift */; };
 		79A940441DF423F600BA0EDB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 79A940431DF423F600BA0EDB /* GoogleService-Info.plist */; };
 		79A940461DF4480C00BA0EDB /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A940451DF4480C00BA0EDB /* Helper.swift */; };
-		79ABC9171E18C67400957545 /* addphoto.png in Resources */ = {isa = PBXBuildFile; fileRef = 79ABC9161E18C67400957545 /* addphoto.png */; };
 		79ABC91B1E18C68400957545 /* profile.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 79ABC91A1E18C68400957545 /* profile.jpg */; };
-		79ABC91D1E18C68900957545 /* user.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 79ABC91C1E18C68900957545 /* user.jpg */; };
 		79ABC9221E18D02E00957545 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79ABC9211E18D02E00957545 /* Assets.xcassets */; };
 		79EED0F61E0932D8005CE68F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79EED0F41E0932D8005CE68F /* Main.storyboard */; };
 		C281C8E81E0BA47500446FCB /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C281C8E71E0BA47500446FCB /* MapViewController.swift */; };
@@ -54,10 +52,11 @@
 		428C64DB960DBEEC81808B66 /* Pods_GoChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		79235BE51E0801E000629D70 /* RoomsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoomsViewController.swift; path = GoChat/RoomsViewController.swift; sourceTree = "<group>"; };
 		79235BE81E08026400629D70 /* Room.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Room.swift; path = GoChat/Room.swift; sourceTree = "<group>"; };
+		79265BC81E1AC70100DF3287 /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Images; sourceTree = "<group>"; };
+		79265BCC1E1B2E5E00DF3287 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = GoChat/LoginViewController.swift; sourceTree = "<group>"; };
+		79265BCE1E1B49C400DF3287 /* MyInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyInfoViewController.swift; path = GoChat/MyInfoViewController.swift; sourceTree = "<group>"; };
 		794396801E18DC1800E7C145 /* RoomMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoomMapViewController.swift; path = GoChat/RoomMapViewController.swift; sourceTree = "<group>"; };
 		794396821E18DC2A00E7C145 /* RoomChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoomChatViewController.swift; path = GoChat/RoomChatViewController.swift; sourceTree = "<group>"; };
-		794396841E18E36300E7C145 /* logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = logo.jpg; path = Images/logo.jpg; sourceTree = "<group>"; };
-		794396861E18F47000E7C145 /* default-user-image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default-user-image.png"; sourceTree = "<group>"; };
 		79A940081DF40B5100BA0EDB /* GoChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79A9400B1DF40B5100BA0EDB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		79A940151DF40B5100BA0EDB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -68,13 +67,10 @@
 		79A940271DF40B5100BA0EDB /* GoChatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoChatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		79A9402B1DF40B5100BA0EDB /* GoChatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoChatUITests.swift; sourceTree = "<group>"; };
 		79A9402D1DF40B5100BA0EDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		79A940391DF40B7900BA0EDB /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = GoChat/LoginViewController.swift; sourceTree = "<group>"; };
 		79A940431DF423F600BA0EDB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		79A940451DF4480C00BA0EDB /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		79A940471DF44E4B00BA0EDB /* GoChat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GoChat.entitlements; sourceTree = "<group>"; };
-		79ABC9161E18C67400957545 /* addphoto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = addphoto.png; path = Images/addphoto.png; sourceTree = "<group>"; };
 		79ABC91A1E18C68400957545 /* profile.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = profile.jpg; path = Images/profile.jpg; sourceTree = "<group>"; };
-		79ABC91C1E18C68900957545 /* user.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = user.jpg; path = Images/user.jpg; sourceTree = "<group>"; };
 		79ABC9211E18D02E00957545 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		79EED0F51E0932D8005CE68F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C281C8E71E0BA47500446FCB /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = GoChat/MapViewController.swift; sourceTree = "<group>"; };
@@ -135,7 +131,8 @@
 				C281C8E71E0BA47500446FCB /* MapViewController.swift */,
 				C2D1907C1E14D67D00B0E34C /* default-user-image.png */,
 				C2BAA7781E14125900F20698 /* profile.jpg */,
-				79A940391DF40B7900BA0EDB /* LoginViewController.swift */,
+				79265BCC1E1B2E5E00DF3287 /* LoginViewController.swift */,
+				79265BCE1E1B49C400DF3287 /* MyInfoViewController.swift */,
 				79235BE51E0801E000629D70 /* RoomsViewController.swift */,
 				794396801E18DC1800E7C145 /* RoomMapViewController.swift */,
 				794396821E18DC2A00E7C145 /* RoomChatViewController.swift */,
@@ -190,17 +187,14 @@
 		79A9400A1DF40B5100BA0EDB /* GoChat */ = {
 			isa = PBXGroup;
 			children = (
+				79265BC81E1AC70100DF3287 /* Images */,
 				79ABC9211E18D02E00957545 /* Assets.xcassets */,
-				79ABC9161E18C67400957545 /* addphoto.png */,
 				79ABC91A1E18C68400957545 /* profile.jpg */,
-				79ABC91C1E18C68900957545 /* user.jpg */,
 				79A940471DF44E4B00BA0EDB /* GoChat.entitlements */,
 				79A9400B1DF40B5100BA0EDB /* AppDelegate.swift */,
 				79A940451DF4480C00BA0EDB /* Helper.swift */,
 				79A940171DF40B5100BA0EDB /* Info.plist */,
 				79A940431DF423F600BA0EDB /* GoogleService-Info.plist */,
-				794396841E18E36300E7C145 /* logo.jpg */,
-				794396861E18F47000E7C145 /* default-user-image.png */,
 			);
 			path = GoChat;
 			sourceTree = "<group>";
@@ -348,13 +342,10 @@
 			files = (
 				79ABC91B1E18C68400957545 /* profile.jpg in Resources */,
 				79A940161DF40B5100BA0EDB /* LaunchScreen.storyboard in Resources */,
-				794396871E18F47000E7C145 /* default-user-image.png in Resources */,
 				79A940441DF423F600BA0EDB /* GoogleService-Info.plist in Resources */,
 				79ABC9221E18D02E00957545 /* Assets.xcassets in Resources */,
+				79265BC91E1AC70100DF3287 /* Images in Resources */,
 				C2BAA7791E14125900F20698 /* profile.jpg in Resources */,
-				79ABC91D1E18C68900957545 /* user.jpg in Resources */,
-				794396851E18E36300E7C145 /* logo.jpg in Resources */,
-				79ABC9171E18C67400957545 /* addphoto.png in Resources */,
 				C2D1907D1E14D67D00B0E34C /* default-user-image.png in Resources */,
 				79EED0F61E0932D8005CE68F /* Main.storyboard in Resources */,
 			);
@@ -429,8 +420,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79265BCD1E1B2E5E00DF3287 /* LoginViewController.swift in Sources */,
 				794396811E18DC1800E7C145 /* RoomMapViewController.swift in Sources */,
-				79A9403A1DF40B7900BA0EDB /* LoginViewController.swift in Sources */,
+				79265BCF1E1B49C400DF3287 /* MyInfoViewController.swift in Sources */,
 				C281C8E81E0BA47500446FCB /* MapViewController.swift in Sources */,
 				79235BE91E08026500629D70 /* Room.swift in Sources */,
 				79A9400C1DF40B5100BA0EDB /* AppDelegate.swift in Sources */,

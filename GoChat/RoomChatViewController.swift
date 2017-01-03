@@ -16,10 +16,11 @@ import FirebaseStorage
 import FirebaseAuth
 
 class RoomChatViewController: JSQMessagesViewController {
-    
     var messages = [JSQMessage]()
     var nickNamesDict = [NSAttributedString]()
+    var avatarDict = [String:JSQMessagesAvatarImage]()
     var uid = String()
+    //@IBOutlet weak var avatar: UIImageView!
     
     //********選擇房間參考位址及房號
     //var targetRoomRef: FIRDatabaseReference?
@@ -43,42 +44,54 @@ class RoomChatViewController: JSQMessagesViewController {
         print("進來了...我要進的房號是" + self.targetRoomNum)
         print(messageRef)
         
-        // No avatars
-        collectionView!.collectionViewLayout.incomingAvatarViewSize = CGSize.zero
-        collectionView!.collectionViewLayout.outgoingAvatarViewSize = CGSize.zero
         if let currentUser = FIRAuth.auth()?.currentUser{
-            //self.senderId = currentUser.uid
-            self.senderId = uuid
             if currentUser.isAnonymous == true
             {
-                //根據roomUser senderId(uuid)去資料庫抓user的senderName                
-                observeUsers(uuid: senderId)
-            }else{
-                //不會用到這裡
+                //self.senderId = uuid
                 self.senderId = FIRAuth.auth()?.currentUser?.uid
-                self.senderDisplayName = ""
             }
-        }
+        // set avatars
+        collectionView!.collectionViewLayout.incomingAvatarViewSize = CGSize(width: 30, height: 30)
+        collectionView!.collectionViewLayout.outgoingAvatarViewSize = CGSize(width: 30, height: 30)
+        observeUsers(uuid: senderId)
         observeMessages()
+        }
     }
     func observeUsers(uuid: String){
         self.roomRef.child("RoomUsers").child(uuid).observe(FIRDataEventType.value){
             (snapshot: FIRDataSnapshot) in
-            if let dict = snapshot.value as? [String:String]
+            if let dict = snapshot.value as? [String:Any]
             {
+                let avatarUrl = dict["UserImgUrl"] as! String
+                self.setupAvatar(url: avatarUrl, messageId: uuid)
                 //取出成員資料
                 print(dict)
                 let myid = String(self.senderId)
-                if dict["id"] == myid{
+                if (dict["id"] as! String) == myid{
+                    //根據roomUser senderId(uuid)去資料庫抓user的senderName
                     //取出我的暱稱
-                    let myname = dict["NickName"]
-                    print("myname is " + myname!)
+                    let myname = dict["senderDisplayName"] as! String
+                    print("myname is " + myname)
                     self.senderDisplayName = myname
                 }
             }
         }
     }
-    
+    func setupAvatar(url: String, messageId:String){
+//        if url != ""{
+//            let fileUrl = NSURL(string: url)
+//            let data = NSData(contentsOf: fileUrl! as URL)
+//            let image = UIImage(data:data! as Data)
+//            let userImg = JSQMessagesAvatarImageFactory.avatarImage(with: image, diameter: 30)
+//            avatarDict[messageId] = userImg
+//            print("i have image")
+//        }else{
+//            let avatar = UIImage(named:"user")
+//            avatarDict[messageId] = JSQMessagesAvatarImageFactory.avatarImage(with: avatar, diameter: 30)
+//            print("default image")
+//        }
+//        collectionView.reloadData()
+    }
     func observeMessages() {
         messageRef.observe(FIRDataEventType.childAdded){(snapshot: FIRDataSnapshot) in
             if let dict = snapshot.value as?[String: AnyObject]{
@@ -175,8 +188,11 @@ class RoomChatViewController: JSQMessagesViewController {
         }
     }
     
+    //設定大頭貼
     override func collectionView(_ collectionView: JSQMessagesCollectionView!, avatarImageDataForItemAt indexPath: IndexPath!) -> JSQMessageAvatarImageDataSource! {
-        return nil
+        let message = messages[indexPath.item]
+        return JSQMessagesAvatarImageFactory.avatarImage(withPlaceholder: UIImage(named:"user"), diameter: 30)
+        //return avatarDict[message.senderId]
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
